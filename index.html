@@ -7,32 +7,83 @@
 	<!-- displays site properly based on user's device -->
 
 	<link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+	<link href="https://fonts.googleapis.com/css?family=Space+Mono:700&display=swap" rel="stylesheet" />
 	<link rel="stylesheet" href="style.css">
 
 	<title>Frontend Mentor | Tip calculator app</title>
 </head>
 
 <body>
+	<main class="page">
+		<img src="images/logo.svg" class="page__logo" alt="Splitter">
 
-	Bill
+		<form class="form">
+			<section class="form__section--bill">
+				<div class="form__group">
+					<div class="form__label-container">
+						<label class="form__label" for="bill">Bill</label>
+						<span id="bill-warning" class="form__warning warning-bill">
+							Can't be empty
+						</span>
+					</div>
+					<input type="number" name="bill" id="bill" class="form__input form__input-bill" placeholder="0"
+						aria-describedby="bill-warning" />
+				</div>
+				<fieldset class="form__group form__group--tip">
+					<legend class="form__label form__label-tip">Select Tip %</legend>
 
-	Select Tip %
-	5%
-	10%
-	15%
-	25%
-	50%
-	Custom
+					<div class="form__tip-options">
+						<label class="form__tip-label" for="tip-5">
+							<input type="radio" name="tip" id="tip-5" value="5" class="form__tip-input" />5%</label>
 
-	Number of People
+						<label class="form__tip-label" for="tip-10">
+							<input type="radio" name="tip" id="tip-10" value="10" class="form__tip-input" />10%</label>
 
-	Tip Amount
-	/ person
+						<label class="form__tip-label" for="tip-15">
+							<input type="radio" name="tip" id="tip-15" value="15" class="form__tip-input" />15%</label>
 
-	Total
-	/ person
+						<label class="form__tip-label" for="tip-25">
+							<input type="radio" name="tip" id="tip-25" value="25" class="form__tip-input" />25%</label>
 
-	Reset
+						<label class="form__tip-label" for="tip-50">
+							<input type="radio" name="tip" id="tip-50" value="50" class="form__tip-input" />50%</label>
+
+						<label class="form__tip-label form__tip-label-custom" for="tip-custom" aria-label="Custom tip">
+							<input type="number" name="tip-custom" id="tip-custom" class="form__input form__input--custom"
+								placeholder="Custom" /></label>
+					</div>
+				</fieldset>
+
+				<div class="form__group form__group--people">
+					<div class="form__label-container">
+						<label class="form__label" for="people">Number of People</label>
+						<span id="people-warning" class="form__warning warning-people">
+							Can't be empty
+						</span>
+					</div>
+					<input type="number" name="people" id="people" class="form__input form__input-people" placeholder="0"
+						aria-describedby="people-warning" />
+				</div>
+			</section>
+
+			<section class="form__section--results">
+				<div class="form__results-container">
+					<div class="form__result">
+						<label class="form__result-label" for="tip-amount">Tip Amount <span>/ person</span></label>
+						<output id="tip-amount" class="form__result-output" aria-live="polite"
+							aria-atomic="true">$0.00</output>
+					</div>
+
+					<div class="form__result">
+						<label class="form__result-label" for="tip-amount">Total <span>/ person</span></label>
+						<output id="tip-amount" class="form__result-output" aria-live="polite"
+							aria-atomic="true">$0.00</output>
+					</div>
+				</div>
+				<button type="reset" class="form__button">Reset</button>
+			</section>
+		</form>
+	</main>
 
 	<script src="script.js"></script>
 </body>

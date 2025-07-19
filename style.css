@@ -30,4 +30,237 @@ button {
 	--Grey-400: hsl(184, 14%, 56%);
 	--Grey-200: hsl(185, 41%, 84%);
 	--Grey-50: hsl(189, 47%, 97%);
+	--Green-200: hsl(172, 61%, 77%);
+	--red: hsl(13, 70%, 61%);
+	
 }
+
+body {
+	min-height: 100vh;
+	line-height: 1.5;
+	font-family: "Space Mono", monospace;
+  	background-color: var(--Grey-200);
+ 	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+}
+img {
+	display: block;
+	max-width: 100%;
+}
+
+.page {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 2.5rem;
+	margin-block-start: 3.125rem;
+	width: 100%;
+	max-width: 57.5rem;
+}
+
+.page__logo {
+}
+
+.form {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	gap: 2rem;
+	background-color: var(--White);
+	box-shadow: 0 2rem 2.6875rem rgba(79, 166, 175, 0.200735);
+	border-radius: 1.5625rem 1.5625rem 0 0;
+	padding-inline: 1.5rem;
+	padding-block: 2rem;
+	width: 100%;
+}
+.form__section--bill {
+	display: flex;
+	flex-direction: column;
+	flex-wrap: wrap;
+	gap: 2rem;
+	width: 100%;
+}
+.form__group {
+	display: flex;
+	flex-direction: column;
+	gap: 0.375rem;
+}
+.form__group--tip {
+	padding: 0;
+  	border: transparent;
+  	gap: 1rem;
+}
+
+.form__label-container {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	flex-wrap: wrap;
+}
+.form__label,
+.form__warning {
+  font-weight: 700;
+  font-size: 1rem;
+  line-height: 1.5;
+}
+.form__label {
+	color: var(--Grey-500);
+}
+.form__warning {
+	color: var(--red);
+	display: none;
+}
+.warning-bill {
+}
+.form__input {
+	background: var(--Grey-50);
+  	border-radius: 0.3125rem;
+	border: transparent;
+	padding-inline: 1rem;
+	padding-block: 0.375rem;
+	text-align: right;
+	font-weight: 700;
+	font-size: 1.5rem;
+	line-height: 1.5rem;
+	color: var(--Green-900);
+	width: 100%;
+}
+.form__input:focus {
+	outline: 2px solid var(--Green-400);
+}
+ 
+.form__input-bill,
+.form__input-people {
+	background-repeat: no-repeat;
+	background-position: 1rem center;
+}
+.form__input-bill {
+	background-image: url("images/icon-dollar.svg");
+}
+.form__input-people {
+	background-image: url("images/icon-person.svg");
+}
+
+.form__input::placeholder {
+	font-weight: 700;
+	font-size: 1.5rem;
+	line-height: 1.5;
+	text-align: right;
+	color: var(--Green-900);
+	mix-blend-mode: normal;
+	opacity: 0.35;
+}
+ 
+.form__input--custom {
+	padding-inline: 0.875rem;
+	padding-block: 0.375rem;
+	width: 100%;
+}
+
+.form__label-tip {
+	margin-bottom: 1rem;
+}
+
+.form__tip-options {
+	display: grid;
+  	place-items: center;
+  	grid-template-columns: repeat(auto-fit, minmax(7.375rem, 1fr));
+  	gap: 0.9375rem;
+}
+.form__tip-label {
+	font-weight: 700;
+	font-size: 1.5rem;
+	line-height: 1.5;
+	text-align: center;
+	color: var(--White);
+	position: relative;
+	width: 100%;
+	padding-inline: 0.875rem;
+	padding-block: 0.375rem;
+	z-index: 1;
+	cursor: pointer;
+}
+.form__tip-input {
+	background-color: var(--Green-900);
+}
+.form__tip-label-custom {
+	background: var(--Grey-200);
+  	border-radius: 0.3125rem;
+  	padding: 0;
+}
+input[type="radio"] {
+	z-index: -1;
+	-webkit-appearance: none;
+	appearance: none;
+	margin: 0;
+	position: absolute;
+	top: 0;
+	left: 0;
+	font: inherit;
+	color: currentColor;
+	width: 100%;
+	height: 100%;
+	border-radius: 0.3125rem;
+	border: 1px solid currentColor;
+	cursor: pointer;
+}
+ 
+input[type="radio"]::before {
+	content: "";
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	border-radius: 0.3125rem;
+	background-color: var(--Green-900);
+	z-index: 1;
+	cursor: pointer;
+}
+ 
+input[type="radio"]:checked::before {
+	background-color: var(--Green-400);
+	z-index: 1;
+}
+ 
+input[type="radio"]:focus-visible::before {
+	background-color: var(--Green-200);
+	outline: 1px solid var(--Green-400);
+	outline-offset: -1px;
+}
+ 
+input[type="radio"]:hover::before {
+	background-color: var(--Green-200);
+}
+ 
+input[type="radio"]:focus-visible {
+	background-color: var(--Green-200);
+	outline: 1px solid var(--Green-400);
+	outline-offset: -1px;
+}
+
+.form__input--custom {
+}
+.form__group--people {
+}
+.warning-people {
+}
+.form__input-people {
+}
+.form__section--results {
+}
+.form__results-container {
+}
+.form__result {
+}
+.form__result-label {
+}
+.form__result-output {
+}
+.form__button {
+}
+ 
