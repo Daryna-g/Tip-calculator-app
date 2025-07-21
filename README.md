@@ -28,8 +28,8 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://www.frontendmentor.io/solutions/age-calculator-app-solution-5H_-qexF7x)
-- Live Site URL: [Add live site URL here](https://daryna-g.github.io/Frontend-Mentor--Age-calculator-app-solution/)
+- Solution URL: [Add solution URL here](https://www.frontendmentor.io/solutions/tip-calculator-app-OFETalqHG1)
+- Live Site URL: [Add live site URL here](https://daryna-g.github.io/Tip-calculator-app/)
 
 ## My process
 
