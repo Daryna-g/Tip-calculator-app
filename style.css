@@ -191,6 +191,7 @@ img {
   	border-radius: 0.3125rem;
   	padding: 0;
 }
+
 input[type="radio"] {
 	z-index: -1;
 	-webkit-appearance: none;
@@ -243,24 +244,129 @@ input[type="radio"]:focus-visible {
 	outline-offset: -1px;
 }
 
-.form__input--custom {
-}
 .form__group--people {
 }
 .warning-people {
 }
 .form__input-people {
 }
+
 .form__section--results {
+	background-color: var(--Green-900);
+	border-radius: 0.9375rem;
+	padding-block-start: 2.3125rem;
+	padding-inline: 1.5rem;
+	padding-block-end: 1.5rem;
+	display: flex;
+	flex-direction: column;
+	gap: 2rem;
+	width: 100%;
 }
 .form__results-container {
+	display: flex;
+	flex-direction: column;
+	gap: 1.25rem;
 }
-.form__result {
+.form__result { 
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: 1rem;
 }
 .form__result-label {
+	font-weight: 700;
+	font-size: 1rem;
+	line-height: 1.5;
+	color: var(--White);
+	display: flex;
+	flex-direction: column;
 }
-.form__result-output {
-}
-.form__button {
+.form__result-label span {
+	font-size: 0.8125rem;
+	line-height: 1;
+	color: var(--Grey-500);
 }
  
+.form__result-output {
+	font-weight: 700;
+	font-size: 2rem;
+	line-height: 2.9375rem;
+	text-align: right;
+	letter-spacing: -0.666667px;
+	color: var(--Green-400);
+}
+.form__button {
+	background: var(--Green-400);
+	border: transparent;
+	border-radius: 0.3125rem;
+	font-weight: 700;
+	font-size: 1.25rem;
+	line-height: 1.25;
+	text-align: center;
+	text-transform: uppercase;
+	color: var(--Green-900);
+	cursor: pointer;
+	padding: 0.5625em;
+	transition: background 0.3s ease;
+}
+.form__button:hover {
+	background: var(--Green-200);
+}
+ 
+.form__button:focus {
+	outline: 2px solid var(--Green-400);
+	outline-offset: 2px;
+	background: var(--Green-200);
+}
+
+input[type="number"] {
+	-moz-appearance: textfield;
+	appearance: textfield;
+}
+ 
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+	-webkit-appearance: none;
+	margin: 0;
+}
+
+@media screen and (min-width: 37.5rem) {
+	body {
+	  padding-inline: 1.5rem;
+	}
+}
+ 
+@media screen and (min-width: 46.9375rem) {
+	.page {
+	  gap: 5.4375rem;
+	  margin-block-end: 6.875rem;
+	}
+ 
+	.form {
+	  flex-direction: row;
+	  gap: 3rem;
+	  padding-inline-start: 3rem;
+	  padding-inline-end: 2rem;
+	  border-radius: 1.5625rem;
+	}
+ 
+	.form__section--bill {
+	  gap: 2.5rem;
+	}
+ 
+	.form__tip-options {
+	  grid-template-columns: 1fr 1fr 1fr;
+	}
+ 
+	.form__section--results {
+	  padding-inline: 2.5rem;
+	  padding-block: 2.5rem;
+	  gap: 7.625rem;
+	}
+ 
+	.form__result-output {
+	  font-size: 3rem;
+	  line-height: 4.4375rem;
+	  letter-spacing: -1px;
+	}
+}
