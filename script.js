@@ -40,6 +40,26 @@ function calcPercent() {
 	}
 }
 
+billInput.addEventListener("input", calcTip);
+peopleInput.addEventListener("input", calcTip);
+
+customTipInput.addEventListener("focus", () => {
+	const radios = document.querySelectorAll('input[name="tip"]');
+	radios.forEach((radio) => {
+		radio.checked = false;
+	});
+	customTipInput.value = "";
+});
+customTipInput.addEventListener("input", calcTip);
+
+const radios = document.querySelectorAll('input[name="tip"]');
+radios.forEach((radio) => {
+	radio.addEventListener("change", () => {
+		customTipInput.value = "";
+		calcTip();
+	});
+});
+
 function validateInputs() {
 	const bill = parseFloat(billInput.value);
 	const numPeople = parseInt(peopleInput.value);
@@ -74,3 +94,45 @@ function validateInputs() {
 
 	return isValid;
 }
+
+function handleFocusBlur(input, warning) {
+	input.addEventListener("focus", () => {
+		hideError(input, warning);
+	});
+
+	input.addEventListener("blur", () => {
+		if (!input.value) {
+			showError(input, warning, "Can't be empty");
+		} else {
+			validateInputs();
+		}
+	});
+}
+
+handleFocusBlur(billInput, billWarning);
+handleFocusBlur(peopleInput, peopleWarning);
+
+function showError(input, warning, message) {
+	input.style.border = "2px solid var(--light-red)";
+	warning.textContent = message;
+	warning.style.display = "block";
+}
+
+function hideError(input, warning) {
+	input.style.border = "";
+	warning.style.display = "none";
+}
+
+resetForm.addEventListener("click", () => {
+	amountPerson.textContent = "$0.00";
+	amountTotal.textContent = "$0.00";
+
+	hideError(billInput, billWarning);
+	hideError(peopleInput, peopleWarning);
+	customTipInput.value = "";
+
+	const radios = document.querySelectorAll('input[name="tip"]');
+	radios.forEach((radio) => {
+		radio.checked = false;
+	});
+});

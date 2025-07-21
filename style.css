@@ -26,13 +26,15 @@ button {
 	 /* Neutral */
 	--White: hsl(0, 100%, 100%);
 	--Green-900: hsl(183, 100%, 15%);
+	--Green-500: hsl(183, 78%, 24%);
+	--Green-200: hsl(172, 61%, 77%);
+
 	--Grey-500: hsl(186, 14%, 43%);
 	--Grey-400: hsl(184, 14%, 56%);
 	--Grey-200: hsl(185, 41%, 84%);
 	--Grey-50: hsl(189, 47%, 97%);
-	--Green-200: hsl(172, 61%, 77%);
-	--red: hsl(13, 70%, 61%);
 	
+	--red: hsl(13, 70%, 61%);
 }
 
 body {
@@ -296,7 +298,7 @@ input[type="radio"]:focus-visible {
 	color: var(--Green-400);
 }
 .form__button {
-	background: var(--Green-400);
+	background: var(--Green-500);
 	border: transparent;
 	border-radius: 0.3125rem;
 	font-weight: 700;
